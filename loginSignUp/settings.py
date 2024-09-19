@@ -126,4 +126,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = '/login/'  # Ensure this matches the URL pattern name for your login view
 
-SESSION_COOKIE_AGE = 100  # Remove any explicit time-based expiration
+SESSION_COOKIE_AGE = 3600  # Remove any explicit time-based expiration
