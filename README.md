@@ -18,3 +18,13 @@ This Django project implements a login/signup system using `UserCreationForm`. I
    ```bash
    git clone <repository-url>
    cd <project-directory>
+
+
+##Docker
+1. Make a DockerFile
+2. Make a requirement.txt file
+3. Make docker-compose.yml file 
+4. start docker with command "sudo systemctl start docker"
+5. Build Docker with command "sudo docker-compose build"
+6. Run docker with command "sudo docker-compose up"
+7. Cheers
