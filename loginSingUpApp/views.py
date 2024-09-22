@@ -2,6 +2,8 @@ from django.contrib.auth import authenticate,login as auth_login, logout as auth
 from django.shortcuts import render, redirect
 from .forms import register_form,login_form
 from django.contrib.auth.decorators import login_required
+from django.contrib import  messages
+
 # Create your views here.
 
 @login_required
@@ -19,7 +21,7 @@ def register(request):
             form.save()
             return redirect('login')
         else:
-            print("Errors are :",form.errors)
+            messages.error(request,form.errors)
     form = register_form()
     return render(request,'loginSignUpApp/register.html',{'form':form})
 
@@ -36,6 +38,8 @@ def login(request):
             if user:
                 auth_login(request, user)
                 return redirect('home')
+        else:
+            messages.error(request,form.errors)
     form = login_form()
     return render(request,'loginSignUpApp/login.html',{'form':form})
 
